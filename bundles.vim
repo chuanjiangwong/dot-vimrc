@@ -11,16 +11,17 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 " snippets
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'honza/vim-snippets'
 "------ snipmate dependencies -------
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
 
 "-----------------
 " Fast navigation
@@ -85,6 +86,10 @@ Bundle 'tpope/vim-markdown'
 "------- Go ----------
 Bundle 'fatih/vim-go'
 
+"------- C/C++ -------
+Bundle 'C.vim'
+Bundle 'DoxygenToolkit.vim'
+
 "------- FPs ------
 Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'wlangstroth/vim-racket'
@@ -94,12 +99,12 @@ Bundle 'kien/rainbow_parentheses.vim'
 "--------------
 " Color Schemes
 "--------------
-Bundle 'rickharris/vim-blackboard'
+"Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'rickharris/vim-monokai'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'fisadev/fisa-vim-colorscheme'
+"Bundle 'rickharris/vim-monokai'
+"Bundle 'tpope/vim-vividchalk'
+"Bundle 'Lokaltog/vim-distinguished'
+"Bundle 'chriskempson/vim-tomorrow-theme'
+"Bundle 'fisadev/fisa-vim-colorscheme'
 
 filetype plugin indent on     " required!

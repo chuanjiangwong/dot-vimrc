@@ -14,7 +14,15 @@ syntax on
 "--------
 " color scheme
 set background=dark
-color solarized
+if has("gui_running")
+    color solarized
+endif
+
+"set leader
+let mapleader = ","
+
+"set font
+set guifont=Monospace\ 15
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -45,6 +53,7 @@ set title                                                         " show file in
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
+set completeopt=longest,menu                                      " completer like IDE
 " set relativenumber
 
 " Default Indentation
@@ -161,19 +170,19 @@ let g:user_emmet_expandabbr_key='<C-j>'
 "let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
+"let g:neocomplcache_enable_at_startup=1
+"et g:neoComplcache_disableautocomplete=1
 "let g:neocomplcache_enable_underbar_completion = 1
 "let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-set completeopt-=preview
+"et g:neocomplcache_enable_smart_case=1
+"et g:neocomplcache_min_syntax_length = 3
+"et g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"et completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+"map <C-k> <Plug>(neocomplcache_snippets_force_expand)
+"map <C-k> <Plug>(neocomplcache_snippets_force_expand)
+"map <C-l> <Plug>(neocomplcache_snippets_force_jump)
+"map <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -188,8 +197,8 @@ let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-let g:SuperTabRetainCompletionType=2
+"et g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+"et g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
@@ -245,24 +254,22 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 
-" for macvim
-if has("gui_running")
-    set go=aAce  " remove toolbar
-    "set transparency=30
-    set guifont=Monaco:h13
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-endif
+
+"DoxygenToolkit
+let g:DoxygenToolkit_briefTag_pre="@brief "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@returns "
+let g:DoxygenToolkit_blockHeader="------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="chuanjiang.wong"
+let g:DoxygenToolkit_licenseTag=" www.enno.com "
+
+"YouCompleteMe
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_error_symbol='>>'
+let g:ycm_warning_symbol='>*'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = ''
+
