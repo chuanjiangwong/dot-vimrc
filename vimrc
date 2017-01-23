@@ -273,3 +273,10 @@ let g:ycm_warning_symbol='>*'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = ''
 
+"Yggdroot/indentLine
+let g:intentLIne_char = "|"
+let g:intentLIne_first_char = "|"
+let g:intentLine_color_term = 239
+let g:indentLine_color_gui  = '#A4E57E'
+let g:indentLine_showFirstIndentLevel = 1
+
